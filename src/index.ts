@@ -13,4 +13,4 @@ export async function getProducts() {
 getProducts();
 
 test();
-console.log("Hello World!");
+console.log("Testando git!");
