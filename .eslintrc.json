@@ -1,0 +1,18 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": ["@typescript-eslint", "eslint-plugin-prettier"],
+  "extends": ["standard-with-typescript", "plugin:prettier/recommended"],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "@typescript-eslint/semi": ["error", "always"]
+  }
+}
