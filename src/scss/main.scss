@@ -1,0 +1,14 @@
+main {
+    padding: var(--space-medium) var(--space-xlarge);
+    min-height: 150vh;
+  }
+
+#title-container {
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-size: var(--font-title);
+  }
+}
+

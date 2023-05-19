@@ -7,10 +7,33 @@
     <title>M3 Project</title>
 </head>
 <body>
-    testando...
-    <div id="box-test">
-        <h1>Box</h1>
+    <div id="app">
+        <nav>
+            <div>
+            <img src="./img/logo-m3.png" alt="Logo M3"/>
+            </div>
+            <div id="container-bag">
+            <ion-icon name="bag"/></ion-icon>
+            <div id="bag-counter">
+                <p id="counter">0</p>
+            </div>
+            </div>
+        </nav>
+        <main>
+            <div id="title-container">
+              <h2>Blusas</h2>
+            </div>
+            <section id="central-container">
+            <div class="product-container">
+            </div>
+            <div id="container-load-more">
+                <button id="btn-load-more" class="btn-default">Carregar Mais</button>
+            </div>
+            </section>
+        </main>
     </div>
 </body>
     <script src="bundle.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>

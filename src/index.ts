@@ -1,16 +1,14 @@
-import { test } from "./ts/test";
 import "./scss/style.scss";
+import { requestProducts } from "./ts/products";
+import { type Product } from "./ts/interfaces";
 
-const serverUrl = "http://localhost:3000";
+const products: Product[] = [];
 
-export async function getProducts() {
-  const getData = await fetch(`${serverUrl}/products`);
-  const resolvedData = await getData.json();
-
-  console.log(resolvedData);
-}
-
-getProducts();
-
-test();
-console.log("Hello World!");
+requestProducts()
+  .then((data) => {
+    products.push(...data);
+    console.log(products);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
