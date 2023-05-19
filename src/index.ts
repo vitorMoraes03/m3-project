@@ -1,12 +1,16 @@
 import "./scss/style.scss";
-import { requestProducts } from "./ts/products";
+import { requestProducts, ProductObj } from "./ts/products";
 import { type Product } from "./ts/interfaces";
 
 const products: Product[] = [];
 
 requestProducts()
   .then((data) => {
-    products.push(...data);
+    data.forEach((product) => {
+      const productObj = new ProductObj(product);
+      productObj.renderProduct();
+      products.push(productObj);
+    });
     console.log(products);
   })
   .catch((error) => {
