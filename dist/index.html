@@ -50,6 +50,22 @@
           </div>
         </div>
     </template>
+    <template id="template-filter-order-desktop">
+      <div id="filter-order">
+        <select class="box-default select-desktop" id="select-order">
+          <option value="" selected>Ordenar por:</option>
+          <option value="Most-Recent">Mais recentes</option>
+          <option value="Smallest-Price">Menor preço</option>
+          <option value="Biggest-Price">Maior preço</option>
+        </select>
+      </div>
+    </template>
+    <template id="template-filter-order-mobile">
+      <div>
+        <button class="box-default btn-mobile" id="btn-mobile-filter">Filtrar</button>
+        <button class="box-default btn-mobile" id="btn-mobile-order">Ordenar</button>
+      </div>
+    </template>
 </body>
     <script src="bundle.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

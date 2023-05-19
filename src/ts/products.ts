@@ -67,37 +67,3 @@ export class ProductObj implements Product {
     }
   }
 }
-
-// export function renderProduct(
-//   product: Product,
-//   templateElement: HTMLTemplateElement,
-//   hostElement: HTMLDivElement
-// ): void {
-//   if (templateElement != null && hostElement != null) {
-//     const templateContent = templateElement.content;
-//     const name = templateContent.querySelector(
-//       ".card-name"
-//     ) as HTMLHeadingElement;
-//     const price = templateContent.querySelector(
-//       ".card-price"
-//     ) as HTMLHeadingElement;
-//     const parcelamento = templateContent.querySelector(
-//       ".parcelamento"
-//     ) as HTMLParagraphElement;
-//     const image = templateContent.querySelector(
-//       ".card-image"
-//     ) as HTMLImageElement;
-
-//     name.textContent = product.name;
-//     price.textContent = product.price.toString();
-//     parcelamento.textContent = `${
-//       product.parcelamento[0]
-//     }x de R$${product.parcelamento[1].toFixed(2)}`;
-//     image.src = product.image;
-
-//     const importedNode = document.importNode(templateContent, true);
-//     hostElement.appendChild(importedNode);
-//   } else {
-//     console.error("Produtos não encontrados.");
-//   }
-// }
