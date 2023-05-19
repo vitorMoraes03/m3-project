@@ -1,4 +1,5 @@
 import { type Product } from "./interfaces";
+import { isSmallScreen } from "./smallerFunctions/isSmallScreen";
 
 const serverUrl = "http://localhost:3000";
 
@@ -40,6 +41,9 @@ export class ProductObj implements Product {
   public renderProduct(): void {
     if (this._templateElement != null && this._hostElement != null) {
       const templateContent = this._templateElement.content;
+      const card = templateContent.querySelector(
+        ".card-product"
+      ) as HTMLDivElement;
       const name = templateContent.querySelector(
         ".card-name"
       ) as HTMLHeadingElement;
@@ -62,6 +66,14 @@ export class ProductObj implements Product {
 
       const importedNode = document.importNode(templateContent, true);
       this._hostElement.appendChild(importedNode);
+
+      // hidden
+      const allCards = document.querySelectorAll(".card-product");
+      let lengthLimit;
+      isSmallScreen() ? (lengthLimit = 3) : (lengthLimit = 5);
+      if (allCards.length > lengthLimit) {
+        card.classList.add("hidden");
+      }
     } else {
       console.error("Produtos não encontrados.");
     }

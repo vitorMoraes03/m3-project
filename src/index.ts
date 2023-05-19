@@ -2,6 +2,7 @@ import "./scss/style.scss";
 import { requestProducts, ProductObj } from "./ts/products";
 import { type Product } from "./ts/interfaces";
 import { SelectOrder } from "./ts/selectOrder";
+import { addBtnLoadMore } from "./ts/smallerFunctions/btnLoadMore";
 
 const products: Product[] = [];
 
@@ -12,8 +13,8 @@ requestProducts()
       productObj.renderProduct();
       products.push(productObj);
     });
-    // eslint-disable-next-line no-new
-    new SelectOrder();
+    SelectOrder.getInstance();
+    addBtnLoadMore();
     console.log(products);
   })
   .catch((error) => {

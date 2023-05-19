@@ -31,6 +31,11 @@
             </div>
             </section>
         </main>
+        <footer>
+          <div>
+            <p>M3: Implantação de E-Commerce VTEX</p>
+          </div>
+        </footer>
     </div>
 
     <template class="template-card">
@@ -51,17 +56,18 @@
         </div>
     </template>
     <template id="template-filter-order-desktop">
-      <div id="filter-order">
-        <select class="box-default select-desktop" id="select-order">
+      <div id="filter-order" class="box-default">
+        <select class="select-desktop reset-appearance" id="select-order">
           <option value="" selected>Ordenar por:</option>
           <option value="Most-Recent">Mais recentes</option>
           <option value="Smallest-Price">Menor preço</option>
           <option value="Biggest-Price">Maior preço</option>
         </select>
+        <ion-icon name="chevron-down-outline" class="chevron-small"></ion-icon>
       </div>
     </template>
     <template id="template-filter-order-mobile">
-      <div>
+      <div id="container-order-mobile">
         <button class="box-default btn-mobile" id="btn-mobile-filter">Filtrar</button>
         <button class="box-default btn-mobile" id="btn-mobile-order">Ordenar</button>
       </div>

@@ -1,0 +1,19 @@
+#filter-order {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* width: 100%; */
+ }
+
+#container-order-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+
+    .btn-mobile {
+    margin-top: var(--space-small);
+    margin-right: -4px;
+  }
+ }
+  

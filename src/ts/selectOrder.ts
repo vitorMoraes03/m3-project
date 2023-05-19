@@ -1,10 +1,7 @@
 import { isSmallScreen } from "./smallerFunctions/isSmallScreen";
 
-// quais as principais funcoes disso aqui?
-// uma classe q vc instancia para renderizar algo
-// mobile ou desktop
-
 export class SelectOrder {
+  private static _instance: SelectOrder;
   private readonly _templateElementDesktop: HTMLTemplateElement;
   private readonly _templateElementMobile: HTMLTemplateElement;
   private readonly _titleContainer: HTMLDivElement;
@@ -20,6 +17,14 @@ export class SelectOrder {
       "#title-container"
     ) as HTMLDivElement;
     isSmallScreen() ? this.renderMobile() : this.renderDesktop();
+  }
+
+  public static getInstance(): SelectOrder {
+    if (this._instance != null) {
+      return this._instance;
+    }
+    this._instance = new SelectOrder();
+    return this._instance;
   }
 
   private renderDesktop(): void {

@@ -1,5 +1,6 @@
 @import "nav.scss";
 @import "main.scss";
+@import "selectOrder.scss";
 
 * {
   margin: 0;
@@ -25,6 +26,17 @@ html {
   font-family: 'Open Sans', sans-serif;
   font-size: 62.5%;
   color: var(--light-gray);
+}
+
+footer {
+  background-color: var(--black);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {
@@ -53,4 +65,28 @@ input {
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
+}
+
+.box-default {
+  border-radius: 1px;
+  border: 1px solid var(--gray);
+  background-color: #fff;
+  font-size: 1.4rem;
+  color: var(--gray);
+  cursor: pointer;
+  padding: 1px var(--space-small);
+}
+
+.reset-appearance {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: inherit;
+}
+
+.chevron-small {
+  margin-top: 3px;
+  color: var(--gray);
+  font-size: var(--font-text);
 }
