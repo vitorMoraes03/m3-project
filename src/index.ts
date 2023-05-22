@@ -1,16 +1,23 @@
-import { test } from "./ts/test";
 import "./scss/style.scss";
+import { requestProducts, ProductObj } from "./ts/products";
+import { type Product } from "./ts/interfaces";
+import { SelectOrder } from "./ts/selectOrder";
+import { addBtnLoadMore } from "./ts/smallerFunctions/btnLoadMore";
 
-const serverUrl = "http://localhost:3000";
+const products: Product[] = [];
 
-export async function getProducts() {
-  const getData = await fetch(`${serverUrl}/products`);
-  const resolvedData = await getData.json();
+requestProducts()
+  .then((data) => {
+    data.forEach((product) => {
+      const productObj = new ProductObj(product);
+      productObj.renderProduct();
+      products.push(productObj);
+    });
+    SelectOrder.getInstance();
+    addBtnLoadMore();
+    console.log(products);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
-  console.log(resolvedData);
-}
-
-getProducts();
-
-test();
-console.log("Testando git!");

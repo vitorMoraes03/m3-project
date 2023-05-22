@@ -7,10 +7,73 @@
     <title>M3 Project</title>
 </head>
 <body>
-    testando...
-    <div id="box-test">
-        <h1>Box</h1>
+    <div id="app">
+        <nav>
+            <div>
+            <img src="./img/logo-m3.png" alt="Logo M3"/>
+            </div>
+            <div id="container-bag">
+            <ion-icon name="bag"/></ion-icon>
+            <div id="bag-counter">
+                <p id="counter">0</p>
+            </div>
+            </div>
+        </nav>
+        <main>
+            <div id="title-container">
+              <h2>Blusas</h2>
+            </div>
+            <section id="central-container">
+            <div class="products-container">
+            </div>
+            <div id="container-load-more">
+                <button id="btn-load-more" class="btn-default">Carregar Mais</button>
+            </div>
+            </section>
+        </main>
+        <footer>
+          <div>
+            <p>M3: Implantação de E-Commerce VTEX</p>
+          </div>
+        </footer>
     </div>
+
+    <template class="template-card">
+        <div class="card-product">
+          <div>
+            <img src="" class="card-image"/>
+          </div>
+          <div class="text-product-container">
+            <h3 class="card-name"></h3>
+            <div>
+              <p class="card-price"></p>
+              <p class="parcelamento"></p>
+            </div>
+          </div>
+          <div class="container-button">
+            <button class="btn-card btn-default">Comprar</button>
+          </div>
+        </div>
+    </template>
+    <template id="template-filter-order-desktop">
+      <div id="filter-order" class="box-default">
+        <select class="select-desktop reset-appearance" id="select-order">
+          <option value="" selected>Ordenar por:</option>
+          <option value="Most-Recent">Mais recentes</option>
+          <option value="Smallest-Price">Menor preço</option>
+          <option value="Biggest-Price">Maior preço</option>
+        </select>
+        <ion-icon name="chevron-down-outline" class="chevron-small"></ion-icon>
+      </div>
+    </template>
+    <template id="template-filter-order-mobile">
+      <div id="container-order-mobile">
+        <button class="box-default btn-mobile" id="btn-mobile-filter">Filtrar</button>
+        <button class="box-default btn-mobile" id="btn-mobile-order">Ordenar</button>
+      </div>
+    </template>
 </body>
     <script src="bundle.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>

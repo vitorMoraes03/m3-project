@@ -1,0 +1,32 @@
+nav {
+  padding: var(--space-small) 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(102, 102, 102, 0.5);
+}
+
+#container-bag {
+  position: relative;
+
+  ion-icon {
+    font-size: var(--font-title);
+    color: var(--black);
+  }
+}
+
+#bag-counter {
+  background-color: var(--blue);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  text-align: center;
+
+  p {
+    font-size: 1rem;
+    margin-top: 1px;
+  }
+}
