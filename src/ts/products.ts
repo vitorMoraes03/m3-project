@@ -1,5 +1,6 @@
 import { type Product } from "./interfaces";
 import { isSmallScreen } from "./smallerFunctions/isSmallScreen";
+import { createBtnCounter } from "./smallerFunctions/createCartCounter";
 
 const serverUrl = "http://localhost:3000";
 
@@ -39,35 +40,35 @@ export class ProductObj implements Product {
   }
 
   public renderProduct(): void {
-    if (this._templateElement != null && this._hostElement != null) {
-      const templateContent = this._templateElement.content;
-      const card = templateContent.querySelector(
-        ".card-product"
-      ) as HTMLDivElement;
-      const name = templateContent.querySelector(
-        ".card-name"
-      ) as HTMLHeadingElement;
-      const price = templateContent.querySelector(
-        ".card-price"
-      ) as HTMLHeadingElement;
-      const parcelamento = templateContent.querySelector(
-        ".parcelamento"
-      ) as HTMLParagraphElement;
-      const image = templateContent.querySelector(
-        ".card-image"
-      ) as HTMLImageElement;
+    const templateContent = this._templateElement.content;
+    const card = templateContent.querySelector(
+      ".card-product"
+    ) as HTMLDivElement;
+    const name = templateContent.querySelector(
+      ".card-name"
+    ) as HTMLHeadingElement;
+    const price = templateContent.querySelector(
+      ".card-price"
+    ) as HTMLHeadingElement;
+    const parcelamento = templateContent.querySelector(
+      ".parcelamento"
+    ) as HTMLParagraphElement;
+    const image = templateContent.querySelector(
+      ".card-image"
+    ) as HTMLImageElement;
+    const btn = templateContent.querySelector(".btn-card") as HTMLButtonElement;
 
+    if (this._templateElement != null && this._hostElement != null) {
       name.textContent = this.name;
       price.textContent = `R$ ${this.price.toString()}`;
       parcelamento.textContent = `${
         this.parcelamento[0]
       }x de R$${this.parcelamento[1].toFixed(2)}`;
       image.src = this.image;
-
+      btn.id = `btn-${this.id}`;
       const importedNode = document.importNode(templateContent, true);
       this._hostElement.appendChild(importedNode);
 
-      // hidden
       const allCards = document.querySelectorAll(".card-product");
       let lengthLimit;
       isSmallScreen() ? (lengthLimit = 3) : (lengthLimit = 5);
@@ -77,5 +78,6 @@ export class ProductObj implements Product {
     } else {
       console.error("Produtos não encontrados.");
     }
+    createBtnCounter(btn.id);
   }
 }
